@@ -39,7 +39,7 @@ body {
 .nav a {
     margin-left: 1.5rem;
     text-decoration: none;
-    color
+    color: var(--blue);
 }
 
 .nav a:is(:hover, .active) {
@@ -151,20 +151,14 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: clamp(1.5rem, 4vw, 3rem);
+    margin-top: clamp(1.5rem, 4vw, 3rem);
 }
 
 .card {
     display: grid;
-    grid-template-columns: subgrid;
-    grid-column: span 1;
+    grid-template-columns: 100px 1fr;
     gap: 1rem;
     align-items: center;
-}
-
-.card span {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 700;
-    color: var(--red);
 }
 
 .card img {
@@ -173,17 +167,28 @@ button:hover {
     object-fit: cover;
 }
 
+.card span {
+    display: block;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 0.5rem;
+}
+
 .card h4 {
     font-size: 1.1rem;
+    margin-bottom: 0.5rem;
 }
 
 .card p {
     color: var(--grey);
     font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 .card:has(img:hover) h4 {
     color: var(--red);
+    cursor: pointer;
 }
 
 .attribution {
@@ -197,19 +202,19 @@ button:hover {
     color: var(--attribution);
 }
 
-@container (max-width: 900px) {
+/* @container (max-width: 900px) {
     .bottom {
         grid-template-columns: 1fr;
     }
-}
+} */
 
-@container (max-width: 750px) {
+@container (max-width: 700px) {
     .bottom {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@container (max-width: 500px) {
+@container (max-width: 450px) {
     .bottom {
         grid-template-columns: 1fr;
     }
